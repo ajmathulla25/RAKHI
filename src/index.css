@@ -1,0 +1,1332 @@
+@import "tailwindcss";
+
+:root {
+  --rose: #a51d45;
+  --crimson-royal: #a51d45;
+  --crimson-deep: #700e29;
+  --crimson-dark: #4a0618;
+  --gold-metallic: #d6a83c;
+  --gold-ochre: #c59a35;
+  --gold-bright: #ffd700;
+  --gold-light: #fff2c9;
+  --brass-dark: #8c6218;
+  --blush-light: #ffe1e9;
+  --blush-soft: #fce7ed;
+  --parchment-bg: #fff8ed;
+  --parchment-sheet: #fffdf7;
+  --leather-brown: #321522;
+  --ink-charcoal: #321522;
+  --text-muted: #815768;
+  --text-secondary: #744457;
+}
+
+/* Global Warm Organic & Cultural Setup */
+body {
+  margin: 0;
+  color: var(--ink-charcoal);
+  font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
+  background-color: #fff8ed;
+  background-image: 
+    radial-gradient(circle at 10% 10%, #ffe1e9 0%, transparent 42%),
+    radial-gradient(circle at 90% 90%, #fff2c9 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 60%),
+    linear-gradient(135deg, #fff8ed 0%, #fff0f4 50%, #fff5e6 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.font-serif-royal {
+  font-family: 'Cormorant Garamond', 'Cinzel Decorative', 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.font-handwritten {
+  font-family: 'Cormorant Garamond', 'Marcellus', serif;
+  font-style: italic;
+}
+
+/* ----------------------------------------------------
+   SKEUOMORPHIC PAPER, PARCHMENT & CARDS (Realistic Lighting)
+---------------------------------------------------- */
+.skeuo-card-parchment {
+  background: 
+    linear-gradient(145deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 250, 242, 0.82) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 1);
+  border-left: 1px solid rgba(255, 255, 255, 0.9);
+  border-right: 1px solid rgba(233, 195, 206, 0.5);
+  border-bottom: 1px solid rgba(214, 168, 60, 0.35);
+  border-radius: 32px;
+  box-shadow: 
+    0 2px 4px rgba(50, 21, 34, 0.03),
+    0 12px 28px -6px rgba(165, 29, 69, 0.08),
+    0 24px 50px -12px rgba(214, 168, 60, 0.09),
+    inset 0 1.5px 1px rgba(255, 255, 255, 0.95),
+    inset 0 -1.5px 2px rgba(180, 130, 70, 0.06);
+  position: relative;
+}
+
+/* Recessed Inset Parchment / Debossed Container */
+.skeuo-inset-parchment {
+  background: linear-gradient(180deg, #fff5e5 0%, #fff9f0 40%, #fffdf8 100%);
+  border-top: 1.5px solid #d8b898;
+  border-left: 1.5px solid #e2c6ac;
+  border-right: 1px solid #f2e3d3;
+  border-bottom: 1px solid #ffffff;
+  border-radius: 24px;
+  box-shadow: 
+    inset 0 3px 6px rgba(80, 25, 40, 0.07),
+    inset 0 1px 3px rgba(0, 0, 0, 0.05),
+    0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* Premium Stitched Leather Album */
+.skeuo-leather-album {
+  background: 
+    radial-gradient(circle at 40% 25%, #4e2034 0%, #361423 60%, #200914 100%);
+  border-top: 4px solid #7c415b;
+  border-left: 4px solid #6b334a;
+  border-right: 4px solid #361221;
+  border-bottom: 4px solid #1f0712;
+  border-radius: 32px;
+  box-shadow: 
+    0 4px 10px rgba(0, 0, 0, 0.25),
+    0 25px 60px -10px rgba(45, 12, 28, 0.45),
+    inset 0 2px 4px rgba(255, 215, 170, 0.25),
+    inset 0 -5px 12px rgba(0, 0, 0, 0.65);
+  position: relative;
+}
+
+/* Stitched Leather Edge Detail with Physical Thread Depth */
+.skeuo-leather-album::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 2px dashed rgba(230, 185, 95, 0.65);
+  border-radius: 22px;
+  box-shadow: 
+    0 1px 1px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+}
+
+/* ----------------------------------------------------
+   SKEUOMORPHIC TACTILE BUTTONS (Light, Bevels & Depth)
+---------------------------------------------------- */
+.btn-skeuo-crimson {
+  background: linear-gradient(180deg, #c72554 0%, #a51d45 45%, #881235 85%, #6e0b28 100%);
+  border-top: 1px solid rgba(255, 200, 215, 0.6);
+  border-left: 1px solid rgba(255, 150, 180, 0.3);
+  border-right: 1px solid rgba(90, 8, 30, 0.4);
+  border-bottom: 2px solid #4a0618;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.15),
+    0 8px 22px rgba(165, 29, 69, 0.36),
+    inset 0 1.5px 1px rgba(255, 255, 255, 0.45),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
+  transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-skeuo-crimson:hover {
+  background: linear-gradient(180deg, #d42b5c 0%, #b2204c 45%, #94153b 85%, #7a0c2c 100%);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 14px 28px rgba(165, 29, 69, 0.45),
+    inset 0 1.5px 2px rgba(255, 255, 255, 0.6),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+}
+
+.btn-skeuo-crimson:active {
+  transform: translateY(1.5px);
+  background: linear-gradient(180deg, #881235 0%, #6e0b28 100%);
+  border-bottom: 1px solid #4a0618;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    inset 0 2px 5px rgba(0, 0, 0, 0.45);
+}
+
+/* Brushed & Polished Gold Metallic Button */
+.btn-skeuo-gold {
+  background: linear-gradient(180deg, #ffe48a 0%, #e5b340 35%, #d6a83c 65%, #a87616 100%);
+  border-top: 1.5px solid #fff8d6;
+  border-left: 1px solid #ffeaa7;
+  border-right: 1px solid #7d5408;
+  border-bottom: 2px solid #573a03;
+  color: #382103;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.12),
+    0 8px 22px rgba(214, 168, 60, 0.38),
+    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.85),
+    inset 0 -2px 3px rgba(110, 75, 5, 0.35);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);
+  transition: all 0.18s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-skeuo-gold:hover {
+  background: linear-gradient(180deg, #ffeb9e 0%, #ecbe4d 35%, #dfb246 65%, #b8831c 100%);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.15),
+    0 14px 28px rgba(214, 168, 60, 0.48),
+    inset 0 2px 2px #ffffff,
+    inset 0 -2px 3px rgba(110, 75, 5, 0.3);
+  color: #2b1802;
+}
+
+.btn-skeuo-gold:active {
+  transform: translateY(1.5px);
+  background: linear-gradient(180deg, #c5962d 0%, #94650c 100%);
+  border-bottom: 1px solid #573a03;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    inset 0 2px 5px rgba(80, 50, 0, 0.4);
+}
+
+/* Polished Porcelain / Light Wood Button */
+.btn-skeuo-wood {
+  background: linear-gradient(180deg, #ffffff 0%, #fff8ee 55%, #f4e8d3 100%);
+  border-top: 1.5px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #e2cfb8;
+  border-bottom: 2px solid #cfb69b;
+  color: #a51d45;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 6px 16px rgba(165, 29, 69, 0.08),
+    inset 0 1.5px 1px #ffffff,
+    inset 0 -1.5px 2px rgba(120, 80, 40, 0.08);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: all 0.18s ease;
+}
+
+.btn-skeuo-wood:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #fff2f6 55%, #fae2e9 100%);
+  border-bottom-color: #e9b2c2;
+  transform: translateY(-1.5px);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.08),
+    0 8px 20px rgba(165, 29, 69, 0.14),
+    inset 0 1.5px 1px #ffffff;
+  color: #a51d45;
+}
+
+.btn-skeuo-wood:active {
+  transform: translateY(1.5px);
+  background: #f0e1cc;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+/* Brushed Chrome / Metal Mechanical Switch */
+.btn-skeuo-chrome {
+  background: linear-gradient(180deg, #ffffff 0%, #f0ebdf 40%, #e2d9c8 85%, #cfc4b0 100%);
+  border-top: 1.5px solid #ffffff;
+  border-left: 1px solid #f5eee0;
+  border-right: 1px solid #b8ab96;
+  border-bottom: 2.5px solid #9c8e77;
+  color: #4a212e;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 8px 18px;
+  box-shadow: 
+    0 3px 6px rgba(0, 0, 0, 0.12),
+    inset 0 1px 1px #ffffff,
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.15);
+  transition: all 0.15s;
+}
+
+.btn-skeuo-chrome:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f2e8 40%, #ede4d5 85%, #ddd3c1 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-skeuo-chrome.active-pressed {
+  background: linear-gradient(180deg, #d1c5b0 0%, #b8ab94 100%);
+  border-top: 1.5px solid #8e806a;
+  border-bottom: 1px solid #ffffff;
+  box-shadow: 
+    inset 0 3px 6px rgba(0, 0, 0, 0.35),
+    0 1px 0 rgba(255, 255, 255, 0.8);
+  transform: translateY(2px);
+  color: #2b111a;
+}
+
+/* Segmented Pill Tabs */
+.btn-skeuo-tab {
+  background: linear-gradient(180deg, #fffdfa 0%, #fff3e3 100%);
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #e9c3ce;
+  border-bottom: 1.5px solid #dcb7c3;
+  color: #744457;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 7px 18px;
+  border-radius: 999px;
+  box-shadow: 
+    0 2px 5px rgba(165, 29, 69, 0.05),
+    inset 0 1px 1px #ffffff;
+  transition: all 0.16s ease;
+}
+
+.btn-skeuo-tab:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #ffebf1 100%);
+  color: #a51d45;
+  transform: translateY(-1px);
+}
+
+.btn-skeuo-tab.active {
+  background: linear-gradient(180deg, #c72554 0%, #a51d45 50%, #831033 100%);
+  border-top: 1px solid #ff9dbb;
+  border-left: 1px solid #ff7a9f;
+  border-right: 1px solid #5a0820;
+  border-bottom: 1.5px solid #4a0618;
+  color: #ffffff;
+  box-shadow: 
+    0 4px 14px rgba(165, 29, 69, 0.35),
+    inset 0 1.5px 1px rgba(255, 255, 255, 0.4),
+    inset 0 -1.5px 2px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4);
+}
+
+/* ----------------------------------------------------
+   SKEUOMORPHIC 3D RAKHI MEDALLION & THREADS
+---------------------------------------------------- */
+.rakhi-stage-wrapper {
+  width: 100%;
+  max-width: 520px;
+  height: 220px;
+}
+
+.silk-thread-left, .silk-thread-right {
+  flex-grow: 1;
+  height: 9px;
+  background: repeating-linear-gradient(
+    90deg,
+    #a51d45 0px,
+    #a51d45 12px,
+    #ffd700 12px,
+    #ffd700 18px,
+    #e85d83 18px,
+    #e85d83 24px
+  );
+  border-radius: 6px;
+  box-shadow: 
+    0 3px 6px rgba(0, 0, 0, 0.2),
+    0 6px 12px rgba(165, 29, 69, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.6),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.4);
+  animation: threadWave 4s ease-in-out infinite alternate;
+}
+
+.silk-thread-right {
+  animation-direction: alternate-reverse;
+}
+
+@keyframes threadWave {
+  0% { transform: scaleY(1) rotate(0deg); }
+  50% { transform: scaleY(1.15) rotate(1deg); }
+  100% { transform: scaleY(0.95) rotate(-1deg); }
+}
+
+.skeuo-rakhi-medallion {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  filter: drop-shadow(0 15px 28px rgba(110, 14, 42, 0.38));
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.skeuo-rakhi-medallion:hover, .skeuo-rakhi-medallion.hovered {
+  transform: scale(1.08) rotate(3deg);
+  filter: drop-shadow(0 22px 38px rgba(214, 168, 60, 0.55));
+}
+
+.skeuo-rakhi-medallion.tied {
+  animation: rakhiTiedPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes rakhiTiedPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06) rotate(2deg); }
+}
+
+.rakhi-outer-gold-ring {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: 
+    conic-gradient(
+      from 0deg,
+      #ffe699 0deg,
+      #d49b29 60deg,
+      #fff2be 120deg,
+      #8c5b05 180deg,
+      #ffe699 240deg,
+      #d49b29 300deg,
+      #ffe699 360deg
+    );
+  border: 3.5px solid #fff8d6;
+  box-shadow: 
+    inset 0 4px 8px rgba(255, 255, 255, 0.85),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.45),
+    0 0 0 3px #8f5c09,
+    0 6px 14px rgba(0, 0, 0, 0.35);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rakhi-bead-circle {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+}
+
+.rakhi-ruby-gem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 11px;
+  height: 11px;
+  margin: -5.5px 0 0 -5.5px;
+  background: radial-gradient(circle at 35% 35%, #ff5277 0%, #b80d38 55%, #540316 100%);
+  border-radius: 50%;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    inset 0 1.5px 1.5px rgba(255, 255, 255, 0.95);
+  border: 0.5px solid #ffd700;
+}
+
+.rakhi-inner-velvet {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: 
+    radial-gradient(circle at 40% 40%, #c41846 0%, #7e0c29 65%, #3d0310 100%);
+  box-shadow: 
+    inset 0 5px 10px rgba(0, 0, 0, 0.75),
+    inset 0 -3px 6px rgba(255, 120, 160, 0.35),
+    0 0 0 2.5px #d49b29,
+    0 0 15px rgba(214, 168, 60, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.rakhi-center-emblem {
+  font-size: 42px;
+  color: #ffd700;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.6),
+    0 0 10px rgba(255, 215, 0, 0.85);
+  font-family: serif;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Specific Style Variations */
+.skeuo-rakhi-medallion.sacred-rudraksha .rakhi-inner-velvet {
+  background: radial-gradient(circle at 40% 40%, #853713 0%, #4a1906 75%, #1f0901 100%);
+}
+.skeuo-rakhi-medallion.floral-peacock .rakhi-inner-velvet {
+  background: radial-gradient(circle at 40% 40%, #0e858a 0%, #064749 75%, #021a1b 100%);
+}
+
+/* ----------------------------------------------------
+   SKEUOMORPHIC BRASS PUJA THALI & RITUALS (Burnished Brass)
+---------------------------------------------------- */
+.skeuo-brass-thali {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: 
+    radial-gradient(circle at 35% 35%, #fff2be 0%, #e5b340 30%, #af7915 70%, #5e3f05 100%);
+  border: 10px solid #f6cc5d;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 25px 55px -10px rgba(90, 45, 8, 0.45),
+    inset 0 8px 18px rgba(255, 255, 255, 0.75),
+    inset 0 -10px 22px rgba(0, 0, 0, 0.6),
+    0 0 0 2.5px #7a4e05;
+  position: relative;
+  margin: 0 auto;
+  transition: transform 0.4s ease;
+}
+
+.skeuo-brass-thali.aarti-waving {
+  animation: aartiCircularMotion 3s ease-in-out infinite;
+}
+
+@keyframes aartiCircularMotion {
+  0% { transform: rotate(0deg) scale(1.02); }
+  25% { transform: rotate(8deg) translateY(-8px) scale(1.05); }
+  50% { transform: rotate(0deg) scale(1.02); }
+  75% { transform: rotate(-8deg) translateY(8px) scale(1.05); }
+  100% { transform: rotate(0deg) scale(1.02); }
+}
+
+.thali-mandala-engraving {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 2px dashed rgba(95, 55, 4, 0.45);
+  box-shadow: 
+    inset 0 0 0 6px rgba(255, 235, 160, 0.4),
+    0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.thali-item {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 5;
+}
+
+.thali-item:hover {
+  transform: scale(1.15);
+}
+
+.thali-item-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #3b2203;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+  margin-top: 4px;
+}
+
+.diya-position { top: 22px; left: 50%; transform: translateX(-50%); }
+.kumkum-position { top: 120px; left: 30px; }
+.sweets-position { top: 120px; right: 30px; }
+.bell-position { bottom: 25px; left: 50%; transform: translateX(-50%); }
+
+/* Diya Clay & Flame */
+.skeuo-clay-diya {
+  width: 56px;
+  height: 40px;
+  background: radial-gradient(circle at 40% 40%, #e67840 0%, #b23e12 65%, #5e1c05 100%);
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  border-top: 1.5px solid #ffaa75;
+  box-shadow: 
+    0 5px 10px rgba(0, 0, 0, 0.4),
+    inset 0 2.5px 4px rgba(255, 210, 160, 0.5),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.diya-flame-wrapper {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.diya-flame-glow {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  top: -12px;
+  left: -22px;
+  background: radial-gradient(circle, rgba(255, 200, 0, 0.85) 0%, rgba(255, 100, 0, 0) 70%);
+  border-radius: 50%;
+  animation: diyaGlowPulse 1.2s ease-in-out infinite alternate;
+}
+
+.diya-flame-core {
+  width: 15px;
+  height: 25px;
+  background: radial-gradient(circle at 50% 70%, #ffffff 0%, #ffdf00 35%, #ff4500 75%, rgba(255, 69, 0, 0) 100%);
+  border-radius: 50% 50% 20% 20% / 80% 80% 20% 20%;
+  animation: flameFlicker 0.6s ease-in-out infinite alternate;
+  box-shadow: 0 0 12px #ffaa00, 0 0 20px rgba(255, 170, 0, 0.6);
+}
+
+@keyframes flameFlicker {
+  0% { transform: scale(1) rotate(-2deg); }
+  100% { transform: scale(1.08, 0.94) rotate(2deg); }
+}
+
+@keyframes diyaGlowPulse {
+  0% { opacity: 0.65; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1.25); }
+}
+
+/* Kumkum Vati Bowl */
+.skeuo-brass-vati {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffe480 0%, #e0ab32 50%, #8f6004 100%);
+  border: 2px solid #ffea94;
+  box-shadow: 
+    0 4px 9px rgba(0,0,0,0.35),
+    inset 0 2px 4px rgba(255,255,255,0.7),
+    inset 0 -2px 4px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kumkum-powder {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, #eb2145 0%, #8f061f 70%, #500210 100%);
+  box-shadow: 
+    inset 0 3px 6px rgba(0,0,0,0.65),
+    0 1px 1px rgba(255,255,255,0.2);
+  position: relative;
+}
+
+.akshat-grains {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  width: 13px;
+  height: 9px;
+  background: #fffdf2;
+  border-radius: 5px;
+  box-shadow: 
+    0 1px 3px rgba(0,0,0,0.35),
+    inset 0 1px 1px #ffffff;
+}
+
+/* Sweets Box */
+.skeuo-mithai-box {
+  width: 50px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.kaju-katli-diamond {
+  width: 21px;
+  height: 21px;
+  background: linear-gradient(135deg, #ffffff 0%, #e6e6e6 40%, #c4c4c4 80%, #ffffff 100%);
+  transform: rotate(45deg);
+  box-shadow: 
+    0 3px 6px rgba(0,0,0,0.25),
+    inset 0 1px 1px #ffffff;
+  border: 1px solid #d4d4d4;
+}
+
+.besan-ladoo-sphere {
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffe070 0%, #e69d00 65%, #8f5c00 100%);
+  box-shadow: 
+    0 3px 7px rgba(0,0,0,0.35),
+    inset 0 1.5px 2px rgba(255,255,255,0.6);
+}
+
+/* Brass Bell */
+.skeuo-brass-bell {
+  width: 40px;
+  height: 44px;
+  background: radial-gradient(circle at 35% 30%, #fff4be 0%, #d49b29 55%, #633f02 100%);
+  border-radius: 50% 50% 10% 10% / 70% 70% 20% 20%;
+  border-top: 1px solid #fffbe3;
+  box-shadow: 
+    0 5px 10px rgba(0,0,0,0.4),
+    inset 0 2px 4px rgba(255,255,255,0.8),
+    inset 0 -2px 4px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+.bell-clapper {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #472b02;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+.thali-center-flower {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: rgba(255, 235, 170, 0.45);
+  border: 2px dashed #8c5b00;
+  box-shadow: inset 0 0 8px rgba(255, 215, 100, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thali-center-om {
+  font-size: 28px;
+  color: #7a152d;
+  font-family: serif;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+/* ----------------------------------------------------
+   SKEUOMORPHIC 3D VELVET GIFT BOX
+---------------------------------------------------- */
+.skeuo-velvet-giftbox {
+  width: 220px;
+  height: 180px;
+  position: relative;
+  perspective: 800px;
+  filter: drop-shadow(0 22px 34px rgba(90, 10, 35, 0.35));
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.skeuo-velvet-giftbox:hover {
+  transform: translateY(-5px) scale(1.03);
+}
+
+.giftbox-body {
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
+  height: 130px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #b9204e 0%, #881235 55%, #4e061a 100%);
+  border-top: 1px solid rgba(255, 160, 190, 0.5);
+  box-shadow: 
+    inset 0 3px 6px rgba(255, 120, 160, 0.4),
+    inset 0 -5px 10px rgba(0, 0, 0, 0.6),
+    0 12px 24px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.giftbox-body-ribbon-vertical {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  background: linear-gradient(90deg, #b88118 0%, #ffd768 40%, #fff1b8 55%, #b88118 100%);
+  box-shadow: 
+    0 0 8px rgba(0, 0, 0, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.giftbox-lid {
+  position: absolute;
+  top: 14px;
+  left: 3px;
+  right: 3px;
+  height: 50px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #cf2a5c 0%, #9e173e 65%, #660a24 100%);
+  border-top: 1.5px solid rgba(255, 200, 220, 0.7);
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.4),
+    inset 0 2.5px 5px rgba(255, 160, 190, 0.6);
+  transform-origin: left top;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 10;
+}
+
+.giftbox-lid-ribbon-vertical {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px;
+  background: linear-gradient(90deg, #b88118 0%, #ffd768 40%, #fff1b8 55%, #b88118 100%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.9);
+}
+
+.giftbox-gold-bow {
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 46px;
+  filter: drop-shadow(0 5px 8px rgba(0,0,0,0.35));
+}
+
+.skeuo-velvet-giftbox.open .giftbox-lid {
+  transform: rotate(-38deg) translate(-22px, -38px);
+}
+
+/* Sibling Promise Voucher Cards */
+.skeuo-voucher-card {
+  background: linear-gradient(135deg, #fffdf8 0%, #fff7e8 60%, #ffeed1 100%);
+  border-top: 1.5px solid #ffffff;
+  border-left: 1.5px solid #ffffff;
+  border-right: 1.5px dashed #dcb684;
+  border-bottom: 2px dashed #cb9f64;
+  border-radius: 16px;
+  box-shadow: 
+    0 2px 5px rgba(0, 0, 0, 0.05),
+    0 8px 18px rgba(100, 60, 20, 0.09),
+    inset 0 1px 1px #ffffff;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.skeuo-voucher-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.06),
+    0 14px 26px rgba(100, 60, 20, 0.16);
+  border-color: #a51d45;
+}
+
+.skeuo-voucher-card.redeemed {
+  opacity: 0.8;
+  background: linear-gradient(135deg, #f4fbf6 0%, #e5f7eb 100%);
+  border-color: #28a745;
+}
+
+.skeuo-voucher-stamp {
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1px;
+  background: linear-gradient(180deg, #9e173e 0%, #700e29 100%);
+  border: 1px solid #ffd700;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* ----------------------------------------------------
+   SKEUOMORPHIC WAX SEAL LETTER
+---------------------------------------------------- */
+.skeuo-envelope-box {
+  width: 320px;
+  height: 220px;
+  position: relative;
+  background: #f5c4d2;
+  border-radius: 16px;
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.15),
+    0 24px 48px rgba(110, 16, 45, 0.28);
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.envelope-back-sheet {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #eb9cb0 0%, #dc8299 100%);
+  border-radius: 16px;
+}
+
+.envelope-parchment-letter {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 12px;
+  height: 180px;
+  background: linear-gradient(180deg, #fffdf8 0%, #fffaf0 100%);
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #e0cdb7;
+  border-bottom: 1.5px solid #d4be9f;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 
+    0 4px 14px rgba(0,0,0,0.18),
+    inset 0 1px 1px #ffffff;
+  transition: transform 0.6s cubic-bezier(0.34, 1.3, 0.64, 1);
+  z-index: 2;
+  overflow-y: auto;
+}
+
+.envelope-open .envelope-parchment-letter {
+  transform: translateY(-135px);
+  height: 245px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+  z-index: 20;
+}
+
+.envelope-front-flaps {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, #f2b8c8 50%, transparent 50%),
+              linear-gradient(-45deg, #f2b8c8 50%, transparent 50%);
+  border-radius: 16px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.envelope-top-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 110px;
+  background: linear-gradient(180deg, #e491a7 0%, #cf788f 100%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top;
+  transition: transform 0.5s ease;
+  z-index: 4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.envelope-open .envelope-top-flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.skeuo-wax-seal {
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: 
+    radial-gradient(circle at 35% 35%, #e62556 0%, #a51238 60%, #4f0317 100%);
+  border: 3.5px solid #63051c;
+  box-shadow: 
+    0 6px 14px rgba(0,0,0,0.45),
+    inset 0 2.5px 5px rgba(255,255,255,0.45),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s;
+}
+
+.envelope-open .skeuo-wax-seal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+}
+
+.seal-emblem {
+  font-size: 22px;
+  color: #ffd700;
+  filter: drop-shadow(0 1.5px 2px rgba(0,0,0,0.6));
+}
+
+/* ----------------------------------------------------
+   SKEUOMORPHIC LEATHER POLAROID ALBUM & LIGHTBOX
+---------------------------------------------------- */
+.skeuo-polaroid-frame {
+  background: #ffffff;
+  padding: 14px 14px 22px 14px;
+  border-radius: 8px;
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.18),
+    0 14px 30px rgba(0, 0, 0, 0.38),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s;
+}
+
+.skeuo-polaroid-frame:hover {
+  transform: translateY(-8px) scale(1.03) !important;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 22px 44px rgba(0, 0, 0, 0.48);
+  z-index: 10;
+}
+
+.brass-photo-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: #d6a83c;
+  border-style: solid;
+  pointer-events: none;
+  z-index: 5;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.brass-photo-corner.top-left { top: 4px; left: 4px; border-width: 3.5px 0 0 3.5px; }
+.brass-photo-corner.top-right { top: 4px; right: 4px; border-width: 3.5px 3.5px 0 0; }
+.brass-photo-corner.bottom-left { bottom: 4px; left: 4px; border-width: 0 0 3.5px 3.5px; }
+.brass-photo-corner.bottom-right { bottom: 4px; right: 4px; border-width: 0 3.5px 3.5px 0; }
+
+.polaroid-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #f5ecd9;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.polaroid-zoom-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.polaroid-image-container:hover .polaroid-zoom-overlay {
+  opacity: 1;
+}
+
+.filter-warm img { filter: sepia(0.18) saturate(1.2) contrast(1.05); }
+.filter-sepia img { filter: sepia(0.65) contrast(0.95); }
+.filter-original img { filter: none; }
+
+.skeuo-polaroid-frame.add-card {
+  border: 2px dashed #b89369;
+  background: linear-gradient(180deg, #faf4ea 0%, #f4e8d3 100%);
+}
+
+.skeuo-circle-icon-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #ffffff 0%, #f4e8d3 100%);
+  border: 2px solid #dfcbb0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 3px 6px rgba(0, 0, 0, 0.08),
+    inset 0 1px 1px #ffffff;
+}
+
+.skeuo-lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 5, 10, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.skeuo-lightbox-content {
+  max-width: 600px;
+  width: 100%;
+  background: radial-gradient(circle at 40% 30%, #3d1421 0%, #200812 100%);
+  border: 2.5px solid #d6a83c;
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 
+    0 30px 70px rgba(0,0,0,0.7),
+    inset 0 1px 2px rgba(255, 215, 0, 0.4);
+  position: relative;
+}
+
+.lightbox-img {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: linear-gradient(180deg, #a51d45 0%, #700e29 100%);
+  color: #fff;
+  border: 1.5px solid #d6a83c;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+/* ----------------------------------------------------
+   SKEUOMORPHIC POLISHED WOOD CASSETTE DECK (Teak & Chrome)
+---------------------------------------------------- */
+.skeuo-wood-deck {
+  background: 
+    linear-gradient(180deg, #4d2616 0%, #34160c 60%, #220c06 100%);
+  border-top: 3.5px solid #8e5430;
+  border-left: 3px solid #7a4627;
+  border-right: 3px solid #4a2211;
+  border-bottom: 4px solid #1a0803;
+  border-radius: 24px;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 24px 48px rgba(25, 8, 4, 0.55),
+    inset 0 2px 4px rgba(255, 200, 150, 0.3),
+    inset 0 -5px 8px rgba(0, 0, 0, 0.6);
+}
+
+.skeuo-cassette-bay {
+  background: linear-gradient(180deg, #180904 0%, #100502 100%);
+  border-top: 2px solid #0d0402;
+  border-left: 2px solid #0d0402;
+  border-right: 1.5px solid #472411;
+  border-bottom: 1.5px solid #5a3118;
+  border-radius: 14px;
+  box-shadow: 
+    inset 0 5px 12px rgba(0, 0, 0, 0.8),
+    0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.cassette-spool {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 60%, #ffffff 100%);
+  border: 4px solid #b0b0b0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 
+    0 2px 5px rgba(0, 0, 0, 0.4),
+    inset 0 1px 2px #ffffff;
+}
+
+.cassette-spool.spinning {
+  animation: spoolSpin 2s linear infinite;
+}
+
+@keyframes spoolSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spool-teeth {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #2b2b2b 0%, #1a1a1a 100%);
+  box-shadow: inset 0 1px 2px #000;
+}
+
+.cassette-label-plate {
+  background: linear-gradient(180deg, #fffdf8 0%, #fff3de 100%);
+  border-radius: 8px;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ccb593;
+  box-shadow: 
+    0 2px 6px rgba(0, 0, 0, 0.25),
+    inset 0 1px 1px #ffffff;
+}
+
+.skeuo-vu-meter-panel {
+  background: #120703;
+  border-radius: 10px;
+  border: 1.5px solid #361509;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.vu-meter-bar {
+  width: 14px;
+  background: linear-gradient(0deg, #28a745 0%, #ffc107 70%, #dc3545 100%);
+  border-radius: 3px;
+  transition: height 0.15s ease;
+  box-shadow: 0 0 6px rgba(255, 193, 7, 0.5);
+}
+
+.skeuo-led-light-green {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #00ff66;
+  box-shadow: 0 0 12px #00ff66, 0 0 2px #ffffff;
+}
+
+/* ----------------------------------------------------
+   DEBOSSED & RECESSED FORM INPUTS
+---------------------------------------------------- */
+.skeuo-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #815768;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.skeuo-input, .skeuo-textarea {
+  background: linear-gradient(180deg, #fff3e3 0%, #fff8ed 40%, #fffdf8 100%) !important;
+  border-top: 1.5px solid #dcb795 !important;
+  border-left: 1.5px solid #e5c7ab !important;
+  border-right: 1px solid #f2e3d3 !important;
+  border-bottom: 1px solid #ffffff !important;
+  border-radius: 16px !important;
+  padding: 11px 16px !important;
+  color: #321522 !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 
+    inset 0 3px 5px rgba(80, 25, 40, 0.08),
+    inset 0 1px 2px rgba(0, 0, 0, 0.05),
+    0 1px 0 rgba(255, 255, 255, 0.95) !important;
+  transition: all 0.2s ease;
+}
+
+.skeuo-input:focus, .skeuo-textarea:focus {
+  border-top-color: #a51d45 !important;
+  border-left-color: #a51d45 !important;
+  border-right-color: #a51d45 !important;
+  border-bottom-color: #a51d45 !important;
+  box-shadow: 
+    inset 0 2px 4px rgba(165, 29, 69, 0.08),
+    0 0 0 3.5px rgba(165, 29, 69, 0.18),
+    0 2px 8px rgba(165, 29, 69, 0.12) !important;
+  outline: none;
+}
+
+.skeuo-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 235, 241, 0.75) 100%);
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid rgba(233, 195, 206, 0.8);
+  border-bottom: 1px solid rgba(165, 29, 69, 0.25);
+  color: #a51d45;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 5px 14px;
+  border-radius: 999px;
+  box-shadow: 
+    0 2px 6px rgba(165, 29, 69, 0.06),
+    inset 0 1px 1px #ffffff;
+}
+
+.skeuo-status-plaque {
+  background: linear-gradient(180deg, #fffdf8 0%, #fff5e5 100%);
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #e9c3ce;
+  border-bottom: 1.5px solid #dcb7c3;
+  border-radius: 14px;
+  box-shadow: 
+    0 3px 8px rgba(165, 29, 69, 0.06),
+    inset 0 1px 1px #ffffff;
+}
+
+.skeuo-blessing-badge {
+  background: linear-gradient(180deg, #fffdf7 0%, #fff4da 100%);
+  border-top: 1.5px solid #fff9e6;
+  border-left: 1.5px solid #fff5d6;
+  border-right: 1.5px solid #dfb246;
+  border-bottom: 2px solid #c59a35;
+  border-radius: 999px;
+  box-shadow: 
+    0 4px 14px rgba(214, 168, 60, 0.25),
+    inset 0 1px 1px #ffffff;
+}
+
+/* ----------------------------------------------------
+   HERO & NAVBAR SKEUOMORPHISM (Floating Glass & Light)
+---------------------------------------------------- */
+.skeuo-navbar {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(255, 248, 240, 0.65) 100%);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-left: 1px solid rgba(255, 255, 255, 0.85);
+  border-right: 1px solid rgba(233, 195, 206, 0.5);
+  border-bottom: 1px solid rgba(214, 168, 60, 0.3);
+  border-radius: 999px;
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.02),
+    0 14px 34px rgba(165, 29, 69, 0.09),
+    inset 0 1.5px 1px #ffffff;
+  padding: 8px 20px;
+}
+
+.nav-link-skeuo {
+  color: #744457;
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  transition: all 0.2s;
+}
+
+.nav-link-skeuo:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 235, 241, 0.7) 100%);
+  color: #a51d45;
+  box-shadow: 0 2px 6px rgba(165, 29, 69, 0.08), inset 0 1px 1px #fff;
+}
+
+/* Toast Notifications */
+.skeuo-toast {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translate(-50%, 40px);
+  opacity: 0;
+  background: linear-gradient(180deg, #44172a 0%, #290d19 100%);
+  border-top: 1.5px solid #ffd768;
+  border-bottom: 1.5px solid #8f6004;
+  color: #fff9fa;
+  padding: 12px 28px;
+  border-radius: 999px;
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.25),
+    0 20px 45px rgba(50, 21, 34, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 2000;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+
+.skeuo-toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+

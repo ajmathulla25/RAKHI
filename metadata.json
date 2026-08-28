@@ -1,0 +1,6 @@
+{
+  "name": "Raksha Bandhan • A Gift of Love",
+  "description": "An interactive, skeuomorphic Raksha Bandhan celebration gift experience featuring 3D tactile unboxing, digital Rakhi ceremony, memory album with lazy loading, and debounced responsive animations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
